@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { faTrash, faPlus, faPenSquare } from '@fortawesome/free-solid-svg-icons';
 import { AppServiceService } from '../../app-service.service';
@@ -20,6 +20,11 @@ export class TeacherTableComponent implements OnInit {
   ngOnInit(): void {
     this.getTeacherData();
   }
+
+  
+
+
+
 
   addNewTeacher() {
     this.router.navigate(['addTeacher'])
@@ -60,7 +65,7 @@ export class TeacherTableComponent implements OnInit {
     })
   }
 
-  search(value) {
+  @Input() search(value:string) {
     let foundItems = [];
     if (value.length <= 0) {
       this.getTeacherData();
