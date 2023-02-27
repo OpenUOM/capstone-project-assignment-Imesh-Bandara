@@ -26,12 +26,27 @@ app.get("/dbinitialize", async function (req, res) {
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(data));
 });
+
+
+
+
+
+
+
+
+
+
 // ============== Teacher Related endpoints ==============
+
+
+
+
+
 
 app.get("/listTeachers", async function (req, res) {
   console.log("Request received to list teachers");
   let data = await readTeachers();
-
+  
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(data));
 });
@@ -45,13 +60,15 @@ app.post("/getTeacherInfo", async function (req, res) {
   res.end(JSON.stringify(data));
 });
 
+
+
 app.post("/addTeacher", async function (req, res) {
   let reqBody = req.body;
   console.log(
-    "Request received to add teacher. Req body: " + JSON.stringify(reqBody)
+  "Request received to add teacher. Req body: " + JSON.stringify(reqBody)
   );
   let data = await addTeacher(reqBody.id, reqBody.name, reqBody.age);
-
+  
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(data));
 });
@@ -77,6 +94,28 @@ app.post("/deleteTeacher", async function (req, res) {
   res.setHeader("Content-Type", "application/json");
   res.end(JSON.stringify(data));
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ============== Student Related endpoints ==============
 
