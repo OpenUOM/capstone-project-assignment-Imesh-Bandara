@@ -65,7 +65,7 @@ export class TeacherTableComponent implements OnInit {
     })
   }
 
-  @Input() search(value:string) {
+  search(value:string) {
     let foundItems = [];
     if (value.length <= 0) {
       this.getTeacherData();
