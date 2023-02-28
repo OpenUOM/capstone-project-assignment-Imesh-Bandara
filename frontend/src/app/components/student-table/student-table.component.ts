@@ -34,7 +34,7 @@ export class StudentTableComponent implements OnInit {
     this.router.navigate(['editStudent'], navigationExtras)
   }
 
- getStudentData() {
+  getStudentData() {
     this.service.getStudentData().subscribe((response) => {
       this.studentData = Object.keys(response).map((key) => [response[key]]);
     }, (error) => {
@@ -51,7 +51,7 @@ export class StudentTableComponent implements OnInit {
     })
   }
 
-@Input() search(value: string) {
+@Input()search(value: string) {
     let foundItems = [];
     if (value.length <= 0) {
       this.getStudentData();
